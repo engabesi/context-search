@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "version": "1.0",
+  "name": "Context Youtube Search",
+  "description": "Add Youtube Search to Context Menu",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "css": ["searchStyles.css"],
+      "js": ["search.js"]
+    }
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  "permissions": ["contextMenus", "storage"],
+  "options_page": "options/options.html"
+}
